@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Alert?>
+<VBox prefHeight="496.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.pxl.computerstore.gui.ComputerConfiguratorController">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="505.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+            <children>
+                <fx:define>
+                    <Alert fx:id="informationBox" alertType="INFORMATION" title="Information..." />
+                </fx:define>
+                <ListView fx:id="computerComponentsListView" layoutX="14.0" layoutY="65.0" onMouseClicked="#displayComputerComponentDetails" prefHeight="287.0" prefWidth="242.0" />
+                <ListView fx:id="selectedComputerComponentsListView" layoutX="357.0" layoutY="21.0" prefHeight="332.0" prefWidth="257.0" />
+                <Label layoutX="357.0" layoutY="363.0" prefHeight="17.0" prefWidth="66.0" text="Total price:" />
+                <Label fx:id="totalPriceLabel" layoutX="486.0" layoutY="363.0" prefHeight="17.0" prefWidth="66.0" text="0.0€" textAlignment="RIGHT" />
+                <Button layoutX="263.0" layoutY="65.0" mnemonicParsing="false" onAction="#addSelectedComputerComponent" text="Add" />
+                <Button layoutX="489.0" layoutY="440.0" mnemonicParsing="false" onAction="#restart" prefHeight="25.0" prefWidth="124.0" text="Restart" />
+            <Label layoutX="357.0" layoutY="389.0" prefHeight="17.0" prefWidth="109.0" text="Total price excl.:" />
+            <Label fx:id="totalPriceExclLabel" layoutX="486.0" layoutY="389.0" prefHeight="17.0" prefWidth="66.0" text="0.0€" textAlignment="RIGHT" />
+            <TextArea fx:id="computerComponentDescription" layoutX="14.0" layoutY="365.0" prefHeight="149.0" prefWidth="242.0" />
+            <ComboBox fx:id="computerComponentTypes" layoutX="14.0" layoutY="20.0" prefHeight="41.0" prefWidth="242.0" onAction="#computerComponentTypeChanged"/>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
